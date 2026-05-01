@@ -15,7 +15,7 @@ export default function AdminAddJob() {
     }
 
     try {
-      await axios.post("http://localhost:5000/post-job", {
+      await axios.post("https://your-render-url.onrender.com/post-job", {
         title,
         salary,
         location

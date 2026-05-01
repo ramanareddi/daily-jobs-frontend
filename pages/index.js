@@ -22,7 +22,7 @@ export default function Home() {
 
   // ✅ Fetch jobs
   useEffect(() => {
-    axios.get("http://localhost:5000/jobs")
+    axios.get("https://your-render-url.onrender.com/jobs")
       .then(res => {
         setJobs(res.data || []);
         setLoading(false);
@@ -52,7 +52,7 @@ export default function Home() {
     }
 
     try {
-      await axios.post("http://localhost:5000/apply", {
+      await axios.post("https://your-render-url.onrender.com/apply", {
         job_id: jobId,
         user_name: "User",
         user_phone: user.phone,
@@ -77,7 +77,7 @@ export default function Home() {
     }
 
     try {
-      await axios.post("http://localhost:5000/save-user", {
+      await axios.post("https://your-render-url.onrender.com/save-user", {
         phone,
         location
       });
@@ -114,7 +114,7 @@ export default function Home() {
       alert("You said: " + text);
 
       try {
-        const res = await axios.post("http://localhost:5000/voice-search", {
+        const res = await axios.post("https://your-render-url.onrender.com/voice-search", {
           text
         });
 
