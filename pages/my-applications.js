@@ -18,7 +18,7 @@ export default function MyApplications() {
 
     // Fetch only this user's applications
     axios
-      .get(`https://your-render-url.onrender.com/my-applications/${user.phone}`)
+      .get(`https://daily-jobs-backend.onrender.com/my-applications/${user.phone}`)
       .then(res => setApplications(res.data || []))
       .catch(err => console.log(err));
   }, []);

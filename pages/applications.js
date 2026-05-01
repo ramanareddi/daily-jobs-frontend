@@ -5,7 +5,7 @@ export default function Applications() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("https://your-render-url.onrender.com/applications")
+    axios.get("https://daily-jobs-backend.onrender.com/applications")
       .then(res => setData(res.data || []));
   }, []);
 
