@@ -130,11 +130,17 @@ export default function Home() {
 
   // ✅ FILTER LOGIC
   const filteredJobs = jobs.filter(job => {
-    return (
-      job.title.toLowerCase().includes(search.toLowerCase()) &&
-      job.location.toLowerCase().includes(locationFilter.toLowerCase())
-    );
+  const title = job.title?.toLowerCase() || "";
+  const location = job.location?.toLowerCase() || "";
+
+  return (
+    title.includes(search.toLowerCase()) &&
+    location.includes(locationFilter.toLowerCase())
+  );
   });
+  // ✅ DEBUG
+  console.log("Jobs:", jobs);
+  console.log("Filtered Jobs:", filteredJobs);
 
   return (
     <div style={{ padding: 20 }}>
